@@ -1,0 +1,82 @@
+## see all the databases
+show databases;
+
+-- create 1st database
+create database classess;
+
+-- use that database to save all your tables
+use classess;
+
+-- see all the tables in that database
+show tables;
+
+-- create a new table in the database
+create table students (
+    student_id int auto_increment primary key,
+    student_name varchar(200) not null,
+    email varchar(255) not null unique,
+    phone varchar(15) not null unique,
+    qualification varchar(200) not null,
+    grad_year year,
+    dob date,
+    enrolled_on date,
+    age tinyint check (age >= 18),
+    address text
+);
+
+-- see all the columns in the table
+select * from students;
+
+-- see description of the table
+describe students; -- OR desc students;
+
+desc students;
+
+-- insert values in the table
+insert into students 
+(student_name, email, phone, qualification, grad_year, dob, enrolled_on, age, address) 
+values
+('Aarav', 'aarav1@gmail.com', '9876543100', 'B.Sc', 2022, '2000-05-15', '2024-06-01', 25, 'Hyderabad, Telangana'),
+('Vivaan', 'vivaan2@gmail.com', '9876543101', 'M.Tech', 2023, '1999-03-10', '2024-06-02', 26, 'Pune, Maharashtra'),
+('Aditya', 'aditya3@gmail.com', '9876543102', 'B.Sc', 2022, '2001-06-12', '2024-06-03', 24, 'Pune, Maharashtra'),
+('Vihaan', 'vihaan4@gmail.com', '9876543103', 'MCA', 2024, '2004-02-22', '2024-06-04', 21, 'Hyderabad, Telangana'),
+('Arjun', 'arjun5@gmail.com', '9876543104', 'B.Tech', 2021, '2003-11-01', '2024-06-05', 22, 'Bangalore, Karnataka'),
+('Sai', 'sai6@gmail.com', '9876543105', 'BCA', 2024, '2000-01-20', '2024-06-06', 25, 'Hyderabad, Telangana'),
+('Krishna', 'krishna7@gmail.com', '9876543106', 'B.Sc', 2020, '1998-12-30', '2024-06-07', 27, 'Bangalore, Karnataka'),
+('Ishaan', 'ishaan8@gmail.com', '9876543107', 'B.Sc', 2022, '1998-09-15', '2024-06-08', 27, 'Hyderabad, Telangana'),
+('Shaurya', 'shaurya9@gmail.com', '9876543108', 'BE', 2021, '1999-07-17', '2024-06-09', 26, 'Bangalore, Karnataka'),
+('Atharv', 'atharv10@gmail.com', '9876543109', 'B.Tech', 2023, '1998-08-10', '2024-06-10', 27, 'Hyderabad, Telangana'),
+('Anaya', 'anaya11@gmail.com', '9876543110', 'MCA', 2024, '1999-04-01', '2024-06-11', 26, 'Pune, Maharashtra'),
+('Aadhya', 'aadhya12@gmail.com', '9876543111', 'M.Tech', 2020, '2002-01-01', '2024-06-12', 23, 'Bangalore, Karnataka'),
+('Diya', 'diya13@gmail.com', '9876543112', 'B.Sc', 2021, '2005-06-01', '2024-06-13', 20, 'Pune, Maharashtra'),
+('Myra', 'myra14@gmail.com', '9876543113', 'M.Tech', 2021, '1999-12-12', '2024-06-14', 26, 'Pune, Maharashtra'),
+('Anika', 'anika15@gmail.com', '9876543114', 'BE', 2022, '1999-02-14', '2024-06-15', 26, 'Hyderabad, Telangana'),
+('Meera', 'meera16@gmail.com', '9876543115', 'MCA', 2020, '2000-07-10', '2024-06-16', 25, 'Hyderabad, Telangana'),
+('Sara', 'sara17@gmail.com', '9876543116', 'BCA', 2022, '2003-09-20', '2024-06-17', 22, 'Pune, Maharashtra'),
+('Ira', 'ira18@gmail.com', '9876543117', 'B.Sc', 2021, '2002-03-21', '2024-06-18', 23, 'Bangalore, Karnataka'),
+('Saanvi', 'saanvi19@gmail.com', '9876543118', 'B.Sc', 2022, '2003-10-11', '2024-06-19', 22, 'Pune, Maharashtra'),
+('Tanya', 'tanya20@gmail.com', '9876543119', 'BCA', 2022, '2000-02-25', '2024-06-20', 25, 'Bangalore, Karnataka'),
+('Rohan', 'rohan21@gmail.com', '9876543120', 'BCA', 2024, '2005-03-10', '2024-06-21', 20, 'Pune, Maharashtra'),
+('Neha', 'neha22@gmail.com', '9876543121', 'B.Sc', 2021, '2004-08-28', '2024-06-22', 21, 'Hyderabad, Telangana'),
+('Kunal', 'kunal23@gmail.com', '9876543122', 'M.Tech', 2024, '2004-09-18', '2024-06-23', 21, 'Pune, Maharashtra'),
+('Swati', 'swati24@gmail.com', '9876543123', 'MCA', 2021, '1999-01-17', '2024-06-24', 26, 'Bangalore, Karnataka'),
+('Amit', 'amit25@gmail.com', '9876543124', 'B.Tech', 2022, '2001-06-06', '2024-06-25', 24, 'Hyderabad, Telangana'),
+('Sneha', 'sneha26@gmail.com', '9876543125', 'MCA', 2023, '2004-10-30', '2024-06-26', 21, 'Hyderabad, Telangana'),
+('Manish', 'manish27@gmail.com', '9876543126', 'MCA', 2024, '1999-04-05', '2024-06-27', 26, 'Bangalore, Karnataka'),
+('Pooja', 'pooja28@gmail.com', '9876543127', 'B.Sc', 2023, '1999-07-22', '2024-06-28', 26, 'Pune, Maharashtra'),
+('Riya', 'riya29@gmail.com', '9876543128', 'MCA', 2023, '2000-03-15', '2024-06-29', 25, 'Pune, Maharashtra'),
+('Raj', 'raj30@gmail.com', '9876543129', 'B.Tech', 2024, '2004-06-14', '2024-06-30', 21, 'Hyderabad, Telangana'),
+('Neel', 'neel31@gmail.com', '9876543130', 'BCA', 2022, '2002-05-19', '2024-07-01', 23, 'Bangalore, Karnataka'),
+('Kavya', 'kavya32@gmail.com', '9876543131', 'MCA', 2023, '2003-09-07', '2024-07-02', 22, 'Pune, Maharashtra'),
+('Yash', 'yash33@gmail.com', '9876543132', 'B.Sc', 2021, '1999-12-29', '2024-07-03', 26, 'Hyderabad, Telangana'),
+('Divya', 'divya34@gmail.com', '9876543133', 'BCA', 2024, '2004-02-02', '2024-07-04', 21, 'Bangalore, Karnataka'),
+('Aarohi', 'aarohi35@gmail.com', '9876543134', 'M.Tech', 2023, '1998-11-11', '2024-07-05', 27, 'Pune, Maharashtra'),
+('Mahi', 'mahi36@gmail.com', '9876543135', 'BE', 2022, '2000-07-07', '2024-07-06', 25, 'Hyderabad, Telangana'),
+('Lakshya', 'lakshya37@gmail.com', '9876543136', 'B.Tech', 2021, '1999-10-30', '2024-07-07', 26, 'Bangalore, Karnataka'),
+('Aanya', 'aanya38@gmail.com', '9876543137', 'MCA', 2023, '2001-04-14', '2024-07-08', 24, 'Pune, Maharashtra'),
+('Advik', 'advik39@gmail.com', '9876543138', 'B.Sc', 2022, '2003-06-06', '2024-07-09', 22, 'Hyderabad, Telangana'),
+('Simran', 'simran40@gmail.com', '9876543139', 'M.Tech', 2024, '2000-12-05', '2024-07-10', 25, 'Bangalore, Karnataka');
+
+-- see all the data inside the table
+select * from students;
+
