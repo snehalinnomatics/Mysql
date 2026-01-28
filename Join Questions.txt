@@ -1,0 +1,70 @@
+use learndb;
+
+-- check common columns in both tables: id in movies, movieid in members
+-- common records in both tables: 1,2,5,8,10: 5 records
+
+-- Q.1. Display member and movie name who have watched movies.
+-- Inner Join: Common records will be displayed
+-- Display only those members who have watched a movie
+
+
+
+
+
+-- Q.2. Display all members, even those who did not watch any movie
+-- LEFT Join
+
+
+
+-- Q.3. Display all movies, even if no member watched them
+-- RIGHT JOIN
+
+
+
+-- Q.4. Display Members who have NOT watched any movie
+-- LEFT Join where movie id is NULL
+
+
+-- Q.5. Display Movies that have NOT been watched by anyone
+-- Movies table - 3,4,6,7,9 movie ids are not watched by anyone
+
+
+-- try same result with RIGHT JOIN
+
+
+-- Q.6. Count how many members watched movies in each category
+-- Animation movies watched by 2 members, Action - 1, 18+ - 1, Romance - 1
+
+
+
+-- Q.7. Display members who watched 18+ movies
+-- common people - who watched movie (18+) 
+
+
+
+-- ***************************************************************************************
+
+select * from authors;
+select * from books;
+
+-- Display authorid of authors and title of books
+-- common records
+
+
+
+-- *********************************************************************
+-- SELF JOIN: Connection with same table
+
+
+-- Refer myemp table
+-- Q.8. Find empid, firstname, lastname, mgrid from myemp table 
+-- and disply top 20 records.
+select * from myemp;
+
+
+-- Who is the manager of Neena? Values in mgr_id are coming from emp_id
+-- For self join we assume there are 2 tables called myemp.
+
+-- Q.9. Find manager of every person use self join i.e. connection on single table only
+-- Consider 1st myemp table as emp table and 2nd myemp table as mgr table.
+-- we can write inner join here.
